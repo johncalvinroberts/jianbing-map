@@ -25,4 +25,4 @@ export default {
 }
 </script>
 
-<style src="./styles/app.scss" lang="sass"></style>
+<style src="./styles/app.scss" lang="scss"></style>

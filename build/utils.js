@@ -3,6 +3,7 @@ const path = require('path')
 const config = require('../config')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const packageConfig = require('../package.json')
+const isMiniProgram = process.env.TARGET === 'mp'
 
 exports.assetsPath = function (_path) {
   const assetsSubDirectory = process.env.NODE_ENV === 'production'
@@ -40,7 +41,10 @@ exports.cssLoaders = function (options) {
 
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
-    const loaders = [cssLoader, px2rpxLoader, postcssLoader]
+    let loaders = [cssLoader, postcssLoader]
+    if (isMiniProgram) {
+      loaders.push(px2rpxLoader)
+    }
     // , postcssLoader
     if (loader) {
       loaders.push({

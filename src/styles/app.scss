@@ -1,2 +1,123 @@
 @import './variables.scss';
 @import './reset.scss';
+
+
+.page__dark, .page__light {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page__dark{
+  background-color: $black;
+  color: $white;
+  .panel {
+    opacity: 0.5;
+  }
+}
+
+.page__light {
+  background-color: $white;
+}
+
+.container, .container__flex, .container__flex-layout, .container__has-footer, .container__has-tabbar, .container__no-overflow {
+  height: 100%;
+  position: relative;
+  max-width: 750px;
+  margin: 0 auto;
+}
+.container__flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+// for pages with a custom tab bar
+.container__has-tabbar{
+  padding-bottom: 55px;
+}
+.container__no-overflow {
+  height: 100vh;
+  overflow: hidden;
+}
+.container__has-product-details-navigation {
+  height:calc(100vh - 54px);
+  position: relative;
+}
+
+// flex elements
+.flex--parent {
+  display:flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.flex--parent__horizontal, .flex--parent__center, .flex--parent__horizontal__nocenter{
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 0 auto;
+  align-items: center;
+  width: 100%;
+}
+
+.flex--parent__horizontal__nocenter {
+  align-items: flex-start;
+}
+
+.flex--inner {
+  width: 100%;
+}
+.flex--fill-child {
+  flex: 1;
+}
+
+.flex--parent__center {
+  justify-content: space-around;
+}
+
+
+.inline {
+  display: inline-block;
+}
+
+// Layout
+.padbox, .padbox__notop, .padbox__nobottom, .padbox__noright, .padbox__noleft {
+  padding: $default-padding;
+  position: relative;
+}
+.padbox__notop {
+  padding-top: 0;
+}
+.padbox__nobottom {
+  padding-bottom: 0;
+}
+.padbox__noright {
+  padding-right: 0;
+}
+.padbox__noleft {
+  padding-left: 0;
+}
+.padbox__left-only {
+  padding-left: $default-padding;
+}
+.padbox__right-only {
+  padding-right: $default-padding;
+}
+
+.padbox__bottom-only {
+  padding-bottom: $default-padding;
+}
+
+.padbox__top-only {
+  padding-top: $default-padding;
+}
+
+.panel {
+  width: 100%;
+  text-align: left;
+  background-color: $white;
+  border-bottom: $panel-border;
+}

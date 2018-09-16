@@ -48,6 +48,7 @@ body, page, html {
     -webkit-text-size-adjust: 100%!important;
     text-size-adjust: 100%!important;
     min-height: 100vh;
+    line-height: 1.6;
     font-family:-apple-system,BlinkMacSystemFont,Avenir,Avenir Next,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
 }
 
@@ -62,3 +63,77 @@ body, page, html {
     color: #000000;
   }
 }
+
+button, [type=submit] {
+  padding: $default-padding $default-padding * 2;
+  margin: $default-padding 0;
+  background: $black;
+  color:  $white;
+  border-radius: 2px;
+  border: none;
+  font-size: 14px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+button.outline, [type=submit].outline {
+  padding: $default-padding $default-padding * 2;
+  background: none;
+  color: $black;
+  border: 1.5px solid $black;
+}
+
+button:hover, [type=submit]:hover {
+  background: $black;
+}
+
+button.outline:hover, [type=submit].outline:hover {
+  background: none;
+  border: 1.5px solid $grey;
+  color: $grey;
+}
+
+button:focus, [type=submit]:focus {
+  outline: none;
+}
+
+button:active, [type=submit]:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+/*------------------------------------------------------------
+  Forms
+------------------------------------------------------------*/
+input[type=text], input[type=password], input[type=email], input[type=search], input[type=number], input[type=file], input[type=tel], select, textarea, textarea[type=text] {
+  margin: $default-padding 0;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 2px;
+  border: 1px solid $grey;
+  font-size: 14px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  background-color: #ffffff;
+  height: unset;
+  height: 30px;
+}
+
+input[type=text]:hover, input[type=password]:hover, input[type=email]:hover, input[type=search]:hover, input[type=number]:hover, input[type=file], input[type=tel], select:hover, textarea:hover, textarea[type=text]:hover {
+  border: 1px solid $blue;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=search]:focus, input[type=number], input[type=file], input[type=tel], select:focus textarea:focus, textarea[type=text]:focus {
+  outline: none;
+  border: 1px solid $blue;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=search], input[type=number], input[type=file], input[type=tel], select {
+  padding: $default-padding;
+}
+
+textarea, textarea[type=text] {
+  height: 300px;
+  padding: 14px 20px;
+}
+
