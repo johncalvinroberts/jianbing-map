@@ -1,6 +1,6 @@
 # jianbing-map
 
-> Find jianbing
+> jianbing locator
 
 ## Build Setup
 

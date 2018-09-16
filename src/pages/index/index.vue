@@ -1,31 +1,44 @@
 <template>
-  <div class="container" @click="clickHandle('test click', $event)">
+  <div
+    class="container"
+    @click="clickHandle('test click', $event)">
 
-    <div class="userinfo" @click="bindViewTap">
-      <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
+    <div
+      class="userinfo"
+      @click="bindViewTap">
+      <img
+        class="userinfo-avatar"
+        v-if="userInfo.avatarUrl"
+        :src="userInfo.avatarUrl"
+        background-size="cover" >
       <div class="userinfo-nickname">
-        <card :text="userInfo.nickName"></card>
+        <card :text="userInfo.nickName"/>
       </div>
     </div>
 
     <div class="usermotto">
       <div class="user-motto">
-        <card :text="motto"></card>
+        <card :text="motto"/>
       </div>
     </div>
 
     <form class="form-container">
-      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
+      <input
+        type="text"
+        class="form-control"
+        v-model="motto"
+        placeholder="v-model" >
+      <input
+        type="text"
+        class="form-control"
+        v-model.lazy="motto"
+        placeholder="v-model.lazy" >
     </form>
-    <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
   </div>
 </template>
 
 <script>
 import card from '@/components/card'
-import Lean from '@/config/lean'
-import WXP from 'minapp-api-promise'
 
 export default {
   data () {
@@ -49,15 +62,8 @@ export default {
     }
   },
 
-  async created () {
-    try {
-      await Lean.User.loginWithWeapp()
-      const {userInfo} = await WXP.getUserInfo()
-      this.userInfo = userInfo
-      await Lean.User.current().set(userInfo).save()
-    } catch (error) {
-      console.error(error)
-    }
+  created () {
+    console.log('creatteeed')
   }
 }
 </script>

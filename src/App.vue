@@ -1,11 +1,26 @@
+<template>
+  <div
+    id="app"
+    v-if="!isMiniProgram">
+    <router-view/>
+  </div>
+</template>
 <script>
-import req from '@/utils/request'
-import * as interceptor from '@/utils/interceptor'
-import { baseUrl } from '@/config/http'
-
 export default {
+  data () {
+    return {
+      isMiniProgram: true
+    }
+  },
   created () {
-    req.baseUrl(baseUrl).interceptor(interceptor.request, interceptor.response)
+    this.isMiniProgram = process.env.TARGET === 'mp'
+    console.log('created')
+  },
+  beforeMount () {
+    console.log('beforeMount')
+  },
+  mounted () {
+    console.log('mounted')
   }
 }
 </script>
