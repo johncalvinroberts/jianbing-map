@@ -5,9 +5,9 @@
   "author": "John Roberts <john.calvin.roberts@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "cross-env TARGET=mp node build/mp/dev-server.js",
+    "dev": "cross-env TARGET=mp node build/dev-server.js",
     "dev:web": "cross-env TARGET=web webpack-dev-server --inline --progress --config build/web/webpack.dev.conf.js",
-    "start": "node build/mp/dev-server.js",
+    "start": "node build/dev-server.js",
     "build": "cross-env TARGET=mp node build/mp/build.js",
     "lint": "eslint --ext .js,.vue src"
   },
