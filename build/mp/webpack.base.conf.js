@@ -1,23 +1,23 @@
-var path = require('path')
-var fs = require('fs')
-var utils = require('../utils')
-var config = require('../../config')
-var vueLoaderConfig = require('../vue-loader.conf')
-var MpvuePlugin = require('webpack-mpvue-asset-plugin')
-var glob = require('glob')
-var CopyWebpackPlugin = require('copy-webpack-plugin')
-var relative = require('relative')
-var MpvueEntry = require('mpvue-entry')
+const path = require('path')
+const fs = require('fs')
+const utils = require('../utils')
+const config = require('../../config')
+const vueLoaderConfig = require('../vue-loader.conf')
+const MpvuePlugin = require('webpack-mpvue-asset-plugin')
+const glob = require('glob')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const relative = require('relative')
+const MpvueEntry = require('mpvue-entry')
 
 function resolve (dir) {
   return path.join(__dirname, '../..', dir)
 }
 
 function getEntry (rootSrc) {
-  var map = {}
+  let map = {}
   glob.sync(rootSrc + '/pages/**/main.js')
     .forEach(file => {
-      var key = relative(rootSrc, file).replace('.js', '')
+      let key = relative(rootSrc, file).replace('.js', '')
       map[key] = file
     })
   return map

@@ -11,9 +11,9 @@
       <map
         class="map"
         id="map"
-        longitude="longitude"
-        latitude="latitude"
-        scale="16"
+        :longitude="longitude"
+        :latitude="latitude"
+        scale="14"
         show-location="true"
         markers="markers"
         bindmarkertap="makertap"/>
@@ -22,9 +22,7 @@
       <div class="amap-wrapper map">
         <el-amap
           class="amap-box"
-          :vid="'amap-vue'">
-          heere
-        </el-amap>
+          :vid="'amap-vue'"/>
       </div>
     </div>
   </div>
@@ -46,11 +44,12 @@ export default {
   },
   data () {
     return {
-      isMiniProgram
+      isMiniProgram,
+      latitude: null,
+      longitude: null
     }
   },
   created () {
-    console.log('heyyyy haha')
     if (this.isMiniProgram) {
       let myAmapFun = new amapFile.AMapWX({ key: amapsWxKey })
       myAmapFun.getPoiAround({
@@ -68,10 +67,10 @@ export default {
         }
       })
     } else {
-      setTimeout(() => {
+      // setTimeout(() => {
 
-        amapInitComponent() // eslint-disable-line
-      }, 5000)
+      //   amapInitComponent() // eslint-disable-line
+      // }, 5000)
     }
   },
 }
