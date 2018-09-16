@@ -7,6 +7,7 @@ var MpvuePlugin = require('webpack-mpvue-asset-plugin')
 var glob = require('glob')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var relative = require('relative')
+var MpvueEntry = require('mpvue-entry')
 
 function resolve (dir) {
   return path.join(__dirname, '../..', dir)
@@ -22,9 +23,7 @@ function getEntry (rootSrc) {
   return map
 }
 
-const appEntry = { app: resolve('./src/main.js') }
-const pagesEntry = getEntry(resolve('./src'), 'pages/**/main.js')
-const entry = Object.assign({}, appEntry, pagesEntry)
+const entry = MpvueEntry.getEntry('src/pages.js')
 
 module.exports = {
   // 如果要自定义生成的 dist 目录里面的文件路径，
@@ -106,6 +105,7 @@ module.exports = {
   },
   plugins: [
     new MpvuePlugin(),
+    new MpvueEntry(),
     new CopyWebpackPlugin([{
       from: '**/*.json',
       to: ''

@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .page__dark{
   background-color: $black;
@@ -22,6 +23,7 @@
 
 .container, .container__flex, .container__flex-layout, .container__has-footer, .container__has-tabbar, .container__no-overflow {
   height: 100%;
+  width: 100%;
   position: relative;
   max-width: 750px;
   margin: 0 auto;
@@ -120,4 +122,8 @@
   text-align: left;
   background-color: $white;
   border-bottom: $panel-border;
+}
+
+.text-center {
+  text-align: center;
 }

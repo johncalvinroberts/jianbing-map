@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '../pages/index/index.vue'
+import home from '../pages/index.vue'
 
 
 export default new Router({
@@ -8,6 +8,6 @@ export default new Router({
     path: '/',
     name: 'index',
     component: home,
-    alias: '/pages/index/main'
+    alias: '/pages/index'
   }]
 })

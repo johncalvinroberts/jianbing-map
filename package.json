@@ -16,6 +16,7 @@
     "minapp-api-promise": "^1.0.2",
     "mpvue": "^1.0.11",
     "vue": "^2.5.17",
+    "vue-amap": "^0.5.8",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
@@ -53,6 +54,7 @@
     "glob": "^7.1.2",
     "html-webpack-plugin": "^3.2.0",
     "http-proxy-middleware": "^0.18.0",
+    "mpvue-entry": "^1.5.4",
     "mpvue-loader": "^1.1.2",
     "mpvue-template-compiler": "^1.0.11",
     "mpvue-webpack-target": "^1.0.0",
