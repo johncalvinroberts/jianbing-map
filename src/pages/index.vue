@@ -3,14 +3,18 @@
     class="page__light"
     @click="clickHandle('test click', $event)">
     <div class="container text-center">
-      Welcome to jianbing map
       <bing-map />
+      <bottom-bar>
+        <button class="x">Yoooo</button>
+      </bottom-bar>
     </div>
-</div></template>
+  </div>
+</template>
 
 <script>
 import card from '@/components/card'
 import BingMap from '@/components/bing-map'
+import BottomBar from '@/components/bottom-bar'
 
 export default {
   data () {
@@ -24,7 +28,8 @@ export default {
 
   components: {
     card,
-    BingMap
+    BingMap,
+    BottomBar
   },
 
   methods: {

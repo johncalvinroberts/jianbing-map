@@ -1,0 +1,7 @@
+button {
+  border-radius: 0;
+  transition: all 0.3s ease-in-out;
+  &:before, &:after {
+    display: none;
+  }
+}

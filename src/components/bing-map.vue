@@ -1,7 +1,7 @@
 <style lang="scss" scoped>
   .map {
     width: 100%;
-    height: calc(100vh - 100px)!important;
+    height: calc(100vh - 55px)!important;
   }
 
 </style>
@@ -53,8 +53,8 @@ export default {
     if (this.isMiniProgram) {
       let myAmapFun = new amapFile.AMapWX({ key: amapsWxKey })
       myAmapFun.getPoiAround({
-        iconPathSelected: '../../images/cake2.png', //如：..­/..­/img/marker_checked.png
-        iconPath: '../../images/cake2.png', //如：..­/..­/img/marker.png
+        iconPathSelected: '..static/images/cake2.png', //如：..­/..­/img/marker_checked.png
+        iconPath: '../static/images/cake2.png', //如：..­/..­/img/marker.png
         success: (data) => {
           let markersData = data.markers
           this.markers = markersData

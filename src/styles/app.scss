@@ -1,13 +1,14 @@
 @import './variables.scss';
 @import './reset.scss';
+@import './buttons.scss';
 
 
 .page__dark, .page__light {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  // flex-wrap: wrap;
 }
 .page__dark{
   background-color: $black;
@@ -44,7 +45,7 @@
   overflow: hidden;
 }
 .container__has-product-details-navigation {
-  height:calc(100vh - 54px);
+  height:calc(100vh - 55px);
   position: relative;
 }
 
