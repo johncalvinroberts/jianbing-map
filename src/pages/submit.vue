@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style scoped>
-
-
-
+  .something {
+    display: block;
+  }
 </style>

@@ -5,7 +5,12 @@
     <div class="container text-center">
       <bing-map />
       <bottom-bar>
-        <button class="x">Yoooo</button>
+        <button
+          class="btn--bottom-bar"
+          @click="navToSubmit">🥞 submit</button>
+        <button class="btn--bottom-bar">🔥 hot</button>
+        <button class="btn--bottom-bar">🗺️ city</button>
+        <button class="btn--bottom-bar">👩 me</button>
       </bottom-bar>
     </div>
   </div>
@@ -39,10 +44,14 @@ export default {
     },
     clickHandle (msg, ev) {
       console.log('clickHandle:', msg, ev)
+    },
+    navToSubmit (e) {
+      e && e.preventDefault()
+      this.navigateTo('submit')
     }
   },
   created () {
-    console.log('creeeatedc')
+    console.log('created')
   },
   mounted () {
     console.log('mounted')

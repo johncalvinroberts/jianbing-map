@@ -13,7 +13,27 @@ App.mpType = 'app'
 const app = new Vue(App)
 app.$mount()
 
+
 const isMiniProgram = process.env.TARGET === 'mp'
+
+Vue.mixin({
+  data() {
+    return {
+      router: '/'
+    }
+  },
+  methods: {
+    newroot() {
+      return this.$route
+    },
+    navigateTo(url) {
+      isMiniProgram ? wx.navigateTo({ url: url }) : this.$router.push(url)
+    },
+    reLaunchTo(url) {
+      isMiniProgram ? wx.reLaunch({ url: url }) : this.$router.replace(url)
+    }
+  }
+})
 
 if (!isMiniProgram) {
   Vue.use(Router)

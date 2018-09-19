@@ -7,8 +7,9 @@
   "scripts": {
     "dev": "cross-env TARGET=mp node build/dev-server.js",
     "dev:web": "cross-env TARGET=web webpack-dev-server --inline --progress --config build/web/webpack.dev.conf.js",
-    "start": "node build/dev-server.js",
+    "start": "cross-env TARGET=mp node build/dev-server.js",
     "build": "cross-env TARGET=mp node build/mp/build.js",
+    "all": "npm run dev & npm run dev:web",
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
